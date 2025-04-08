@@ -3,7 +3,8 @@ class CreatePostImages < ActiveRecord::Migration[6.1]
     create_table :post_images do |t|
       t.string :shop_name
       t.text :caption
-      t.integer :user_id
+      t.references :user, null: false, foreign_key: true
+
       t.timestamps
     end
   end
